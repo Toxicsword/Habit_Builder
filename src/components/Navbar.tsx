@@ -3,6 +3,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,9 +12,9 @@ const Navbar = () => {
     <nav className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-sm border-b border-border">
       <div className="container py-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <span className="font-display text-xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+          <Link to="/" className="font-display text-xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
             Habit Builder
-          </span>
+          </Link>
         </div>
         
         {/* Desktop Navigation */}
@@ -33,9 +34,11 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-4">
-          <Button variant="outline" size="sm">
-            Log in
-          </Button>
+          <Link to="/dashboard">
+            <Button variant="outline" size="sm">
+              Dashboard
+            </Button>
+          </Link>
           <Button size="sm">
             Get Started
           </Button>
@@ -67,9 +70,11 @@ const Navbar = () => {
             Pricing
           </a>
           <div className="flex flex-col gap-2 pt-2">
-            <Button variant="outline" className="w-full">
-              Log in
-            </Button>
+            <Link to="/dashboard">
+              <Button variant="outline" className="w-full">
+                Dashboard
+              </Button>
+            </Link>
             <Button className="w-full">
               Get Started
             </Button>
